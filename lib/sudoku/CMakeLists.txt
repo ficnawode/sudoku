@@ -1,10 +1,10 @@
-set(NAME dummy)
+
+set(NAME sudoku)
 
 add_library(${NAME} STATIC)
 
 target_link_libraries(${NAME} 
 PUBLIC
-    Microsoft.GSL::GSL
 )
 
 target_include_directories(${NAME}
@@ -14,6 +14,8 @@ PUBLIC
 
 target_sources(${NAME}
 PRIVATE
-    include/dummy/dummy.hpp
-    src/dummy.cpp
+    include/sudoku/Board.hpp
+    include/sudoku/types.hpp
+    
+    src/Board.cpp
 )

@@ -4,7 +4,8 @@ add_executable(${NAME})
 
 target_link_libraries(${NAME}
 PRIVATE
-    dummy
+    sudoku 
+    # classic_solver
 )
 
 target_sources(${NAME}

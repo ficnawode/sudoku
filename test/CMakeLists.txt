@@ -7,7 +7,8 @@ PUBLIC
     gtest 
     gtest_main
     
-    dummy
+    # classic_solver
+    sudoku
 )
 
 target_include_directories(${NAME}
@@ -17,7 +18,8 @@ PRIVATE
 
 target_sources(${NAME}
 PRIVATE
-    src/dummy_test.cpp
+    src/board_tests.cpp
+    # src/dummy_test.cpp
 )
 
 add_custom_target(${NAME}.run

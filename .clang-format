@@ -62,7 +62,7 @@ SpaceInEmptyParentheses: false
 SpacesInAngles: false
 SpacesInCStyleCastParentheses: false
 SpacesInContainerLiterals: false
-SpacesInCStyleCastParentheses: false
+# SpacesInCStyleCastParentheses: false
 SpacesInParentheses: false
 SpacesInSquareBrackets : false
 Standard: Cpp11
