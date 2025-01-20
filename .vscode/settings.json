@@ -1,0 +1,15 @@
+{
+    "cmake.generator": "Ninja",
+    "cmake.configureSettings": {
+        "LOCAL_CFG": ".local/local.cmake"
+    },
+    "cmake.configureOnEdit": true,
+    "cmake.configureOnOpen": true,
+    "editor.codeActionsOnSave": {
+        "source.fixAll": true
+    },
+    "editor.formatOnSave": true,
+    "clang-format.executable": "clang-format",
+    "clang-format.language.c.enable": true,
+    "clang-format.language.cpp.enable": true
+}
