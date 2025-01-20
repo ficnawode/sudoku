@@ -1,9 +1,12 @@
 #include <iostream>
+#include "classic_solver/ClassicSolver.hpp"
 
 int main()
 {
-    const int a = 5;
-    const int b = 3;
-    std::cout << "HELLO, WORLD!" << std::endl;
+    auto arrays = sudoku::LoadSudokuArrays("p096_sudoku.txt");
+    sudoku::ClassicSolver solver(arrays[0]);
+    solver.PrintBoard();
+    auto solvedBoard = solver.Solve();
+    solver.PrintBoard();
     return 0;
 }

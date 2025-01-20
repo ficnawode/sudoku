@@ -7,7 +7,7 @@ PUBLIC
     gtest 
     gtest_main
     
-    # classic_solver
+    classic_solver
     sudoku
 )
 
@@ -18,7 +18,9 @@ PRIVATE
 
 target_sources(${NAME}
 PRIVATE
+    src/util.hpp
     src/board_tests.cpp
+    src/classic_solver_tests.cpp
     # src/dummy_test.cpp
 )
 

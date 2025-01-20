@@ -2,9 +2,11 @@
 
 #include <algorithm>
 #include <array>
+#include <iostream>
 #include <span>
 #include <unordered_set>
 
+#include "sudoku/fwd.hpp"
 #include "sudoku/types.hpp"
 #include "sudoku/util.hpp"
 
@@ -40,5 +42,19 @@ namespace sudoku
 
         SudokuArray _state;
     };
+
+    // overwrite stream operator to print a board layout for debug
+    inline std::ostream& operator<<(std::ostream& os, const Board& board)
+    {
+        for(std::size_t i = 0; i < 9; ++i)
+        {
+            for(std::size_t j = 0; j < 9; ++j)
+            {
+                os << static_cast<int>(board.Get(i, j)) << " ";
+            }
+            os << std::endl;
+        }
+        return os;
+    }
 
 }

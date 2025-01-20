@@ -5,7 +5,7 @@ add_executable(${NAME})
 target_link_libraries(${NAME}
 PRIVATE
     sudoku 
-    # classic_solver
+    classic_solver
 )
 
 target_sources(${NAME}

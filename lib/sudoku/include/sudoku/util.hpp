@@ -1,7 +1,9 @@
 #pragma once
 #include <array>
 #include <cstdint>
+#include <fstream>
 #include <initializer_list>
+#include <vector>
 #include <stdexcept>
 
 #include "sudoku/types.hpp"
@@ -15,6 +17,34 @@ namespace sudoku
             return static_cast<SudokuValue>(value);
         }
         throw std::invalid_argument("Value must be between 0 and 9");
+    }
+
+    inline std::vector<SudokuArray> LoadSudokuArrays(const std::string filename)
+    {
+        using namespace std;
+        ifstream file(filename);
+        vector<SudokuArray> boards;
+        string line;
+
+        while(getline(file, line))
+        {
+            if(line.rfind("Grid", 0) == 0)
+            {
+                SudokuArray sudokuArray;
+
+                for(int i = 0; i < 9; ++i)
+                {
+                    getline(file, line);
+                    for(int j = 0; j < 9; ++j)
+                    {
+                        sudokuArray[i][j] = static_cast<SudokuValue>(line[j] - '0');
+                    }
+                }
+                boards.push_back(sudokuArray);
+            }
+        }
+
+        return boards;
     }
 
     inline SudokuArray
